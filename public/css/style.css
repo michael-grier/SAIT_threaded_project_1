@@ -1,0 +1,71 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+}
+
+/* LANDING PAGE */
+#landingPage {
+    height: 100vh;
+    width: 100%;
+}
+
+.navigation {
+    display: flex;
+    text-align: left;
+    width: 100%;
+}
+
+.navigation_logo {
+    height: 5rem;
+    margin: .25rem .75rem;
+    width: auto;
+}
+
+.hero {
+    position: absolute;
+    left: 32%;
+    top: 50%;
+    text-align: center;  
+}
+
+.hero_text {
+    margin: 0;
+    font-size: 175%;
+    text-transform: uppercase;
+    letter-spacing: .125rem;
+    line-height: 2.25rem;
+    word-spacing: .2rem
+}
+
+.hero_btn {
+    border-color: #555;
+    color: #555;
+    max-width: 20rem;
+    position: relative;
+    margin: 1rem auto 0 auto;
+}
+
+.hero_btn:link,
+.hero_btn:visited {
+    border: 1px solid #555;
+    border-radius: 3px;
+    color: #555;
+    display: block;
+    font-weight: 700;
+    height: 3rem;
+    letter-spacing: .06rem;
+    padding-top: .75rem;
+    text-align: center;
+    text-decoration: none;
+}
