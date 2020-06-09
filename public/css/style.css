@@ -7,6 +7,8 @@
 
 html,
 body {
+    height: 100vh;
+    width: 100%;
     color: #555;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -15,27 +17,60 @@ body {
 }
 
 /* LANDING PAGE */
-#landingPage {
-    height: 100vh;
-    width: 100%;
-}
-
 .navigation {
+    box-shadow: 0px 4px 9px -8px rgba(110,109,110,1);
     display: flex;
-    text-align: left;
     width: 100%;
 }
 
 .navigation_logo {
-    height: 5rem;
-    margin: .25rem .75rem;
+    height: 6rem;
+    margin: 0 5rem;
     width: auto;
+}
+
+.navigation_links {
+    display: inline-block;
+    flex-grow: 3;
+    list-style: none;
+    margin: .25rem 5rem;
+    text-align: right;
+}
+
+.navigation_links li {
+    display: inline-block;
+    font-size: 110%;
+    margin-top: 2.25rem;
+}
+
+.navigation_links li:first-child {
+    margin-right: 3rem;
+}
+
+.navigation_links li a:link,
+.navigation_links li a:visited {
+    color: #3cB650;
+    font-size: 110%;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.navigation_links li a:hover,
+.navigation_links li a:active {
+    border-bottom: 2px solid #3cB650;
+}
+
+#main {
+    height: 75vh;
+    width: 100%;
 }
 
 .hero {
     position: absolute;
     left: 32%;
-    top: 50%;
+    top: 45%;
     text-align: center;  
 }
 
@@ -68,6 +103,60 @@ body {
     padding-top: .75rem;
     text-align: center;
     text-decoration: none;
+}
+
+#footer {
+    color: #3cB650;
+    text-align: center;
+    width: 100%
+}
+
+.footer_wrap {
+    box-shadow: 0px -4px 9px -8px rgba(110,109,110,1);
+    display: flex;
+}
+
+.footer_nav {
+    display: flex;
+    flex-grow: 1;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.footer_nav li {
+    color: #fff;
+    display: inline-block;
+    font-size: 110%;
+    margin: 2rem 1.5rem 2rem 1.5rem;
+}
+
+.footer_nav li:first-child {
+    margin-left: 5rem;
+}
+
+.footer_nav li a:link,
+.footer_nav li a:visited {
+    color: #3cB650;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.footer_nav li a:hover,
+.footer_nav li a:active {
+    border-bottom: 1px solid #3cB650;
+}
+
+.footer_tag {
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: 0;
+    width: 50%;
+}
+
+.footer_tag p {
+    margin: 2rem 5rem 0 60%;
+    font-size: 90%;
 }
 
 /* REGISTRATION PAGE */
