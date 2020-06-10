@@ -9,7 +9,7 @@ html,
 body {
     height: 100vh;
     width: 100%;
-    color: #555;
+    color: white;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     overflow-x: hidden;
@@ -65,44 +65,64 @@ body {
 #main {
     height: 75vh;
     width: 100%;
+	background-image: linear-gradient(to top right, #25c949, #00261d);
+}
+
+img#people {
+	height: 60vh;
+	position: relative;
+	top: 10%;
+	margin: 0 auto 0 auto;
+	animation: fadein 1s forwards;
+}
+
+/* Animation for image fade in */
+@keyframes fadein{
+	from {left: 45%}
+	to {left: 50%}
+	from {opacity: 0}
+	to {opacity: 1}
 }
 
 .hero {
     position: absolute;
-    left: 32%;
-    top: 45%;
-    text-align: center;  
+    left: 15%;
+    top: 25%;
+    text-align: left;  
 }
 
 .hero_text {
     margin: 0;
-    font-size: 175%;
+    font-size: 350%;
     text-transform: uppercase;
     letter-spacing: .125rem;
-    line-height: 2.25rem;
+    line-height: 3.25rem;
     word-spacing: .2rem
 }
 
-.hero_btn {
-    border-color: #555;
-    color: #555;
-    max-width: 20rem;
-    position: relative;
-    margin: 1rem auto 0 auto;
+.hero_para{
+	margin: 6rem auto 4rem auto;
 }
 
-.hero_btn:link,
-.hero_btn:visited {
-    border: 1px solid #555;
-    border-radius: 3px;
-    color: #555;
+.hero_btn {
+    border: 1px solid white;
+    border-radius: 20px;
+	background-color: black;
+    color: white;
     display: block;
     font-weight: 700;
     height: 3rem;
+	max-width: 200px;
     letter-spacing: .06rem;
     padding-top: .75rem;
     text-align: center;
     text-decoration: none;
+	transition: 0.3s;
+}
+
+.hero_btn:hover {
+	background-color: white;
+	color: black;
 }
 
 #footer {
