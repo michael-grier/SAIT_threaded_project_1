@@ -180,3 +180,21 @@ img#people {
 }
 
 /* REGISTRATION PAGE */
+
+
+/* 404 PAGE */
+.error {
+    position: relative;
+    text-align: center;
+}
+
+.error_head {
+    padding-top: 15rem;
+    padding-bottom: 0;
+    margin-bottom: 0.5rem;
+}
+
+.error-sub {
+    padding-top: 0;
+    margin-top: 0;
+}
