@@ -65,10 +65,10 @@ body {
 #main {
     height: 75vh;
     width: 100%;
-	background-image: linear-gradient(to top right, #25c949, #00261d);
+	background-color: #3cb650;
 }
 
-img#people {
+.people {
 	height: 60vh;
 	position: relative;
 	top: 10%;
@@ -78,30 +78,27 @@ img#people {
 
 /* Animation for image fade in */
 @keyframes fadein{
-	from {left: 45%}
-	to {left: 50%}
+	from {left: 50%}
+	to {left: 55%}
 	from {opacity: 0}
 	to {opacity: 1}
 }
 
 .hero {
     position: absolute;
-    left: 15%;
-    top: 25%;
+    left: 5%;
+    top: 30%;
     text-align: left;  
 }
 
 .hero_text {
     margin: 0;
     font-size: 350%;
-    text-transform: uppercase;
     letter-spacing: .125rem;
     line-height: 3.25rem;
-    word-spacing: .2rem
-}
-
-.hero_para{
-	margin: 6rem auto 4rem auto;
+    word-spacing: .2rem;
+	margin: auto auto 8rem auto;
+    text-align: left;  
 }
 
 .hero_btn {
