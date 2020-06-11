@@ -1,4 +1,4 @@
-const dp = require("../View/DynPage.js");
+const dp = require("../../Views/DynPage.js");
 
 exports.updateDataSql = function update(result, conn, req)
 {

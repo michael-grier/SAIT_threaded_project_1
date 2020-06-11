@@ -2,8 +2,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mongo = require("mongodb").MongoClient;
-const controler = require("./Controlers/controler_tmp.js");
-const dp = require("./View/DynPage.js");
+const controler = require("./public/js/controler.js");
+const dp = require("./views/DynPage.js");
 
 
 // connecting to mongo database
