@@ -107,7 +107,8 @@ body {
 	background-color: black;
     color: white;
     display: block;
-    font-weight: 700;
+    font-weight: 500;
+	font-size: 130%;
     height: 3rem;
 	max-width: 200px;
     letter-spacing: .06rem;
@@ -115,6 +116,7 @@ body {
     text-align: center;
     text-decoration: none;
 	transition: 0.3s;
+	margin-left: 3rem;
 }
 
 .hero_btn:hover {
