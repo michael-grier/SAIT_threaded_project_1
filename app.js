@@ -8,7 +8,6 @@ const indexRouter = require('./routes/index');
 
 app.listen(8000, () =>{ console.log("Server is running")});
 
-
 //mongoose connection
 const url = "mongodb://localhost/invigulus";
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
