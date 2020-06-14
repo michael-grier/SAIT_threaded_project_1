@@ -1,4 +1,4 @@
-const dp = require("../../Views/DynPage.js");
+const dp = require("../View/DynPage.js");
 
 exports.updateDataSql = function update(result, conn, req)
 {
@@ -24,7 +24,7 @@ exports.updateDataSql = function update(result, conn, req)
 			};
 			conn.query(sql_ins, (err, result, fields)=>{ 
 				if (err = "NULL") console.log("Insert executed");
-			});
+			});	
 		};
 }
 
@@ -38,15 +38,32 @@ exports.updateDataMongo = function update(result, dbo, req)
 		var myquery = { _id: result[0]._id };
 		var myobj = { $set: { AgtFirstName: req.body.fname, AgtLastName: req.body.lname, AgtEmail: req.body.email } };
 		dbo.collection("agents").updateOne(myquery, myobj, function(err, res) {
-			if (err = "NULL") console.log("Update executed");    
+			if (err = "NULL") console.log("Update executed");
+//			if (err) throw err;
 		});		
 	}
 	else
 // data set empty -> insert new agent
 	{
-		var myobj = { AgtLastName: `${ req.body.lname }`, AgtFirstName: `${ req.body.fname }` };
-		dbo.collection("agents").insertOne(myobj, function(err, res) {
-			if (err = "NULL") console.log("Insert executed");    
+		// get current sequence number
+		dbo.collection("Counter").findOne({}, function(err, result_add) {
+			if (err) throw err;
+			if (err = "NULL") console.log("Sequence Number selected: " + result_add.sequence_value);
+			var myobj = { _id: `${ result_add.sequence_value }`, AgentId: `${ result_add.sequence_value }`, AgtLastName: `${ req.body.lname }`, AgtFirstName: `${ req.body.fname }`, AgtEmail: `${ req.body.email }` };
+			// actual insert
+			dbo.collection("agents").insertOne(myobj, function(err, res) {
+				if (err) throw err;
+				if (err = "NULL") console.log("Insert executed");
+				// increment sequence number
+				result_add.sequence_value = result_add.sequence_value + 1;
+				var myquery = { _id: result_add._id };
+				var myobj = { $set: { sequence_value: result_add.sequence_value } };
+				// update water level marker
+				dbo.collection("Counter").updateOne(myquery, myobj, function(err, res) {
+					if (err) throw err;
+					if (err = "NULL") console.log("Counter incremented");
+				});
+			});
 		});
 	};
 
