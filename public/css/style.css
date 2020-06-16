@@ -70,17 +70,17 @@ body {
 }
 
 .people {
-	height: 60vh;
+	height: 82vh;
 	position: relative;
-	top: 10%;
+	top: -5%;
 	margin: 0 auto 0 auto;
 	animation: fadein 1s forwards;
 }
 
 /* Animation for image fade in */
 @keyframes fadein{
-	from {left: 50%}
-	to {left: 55%}
+	from {left: 40%}
+	to {left: 45%}
 	from {opacity: 0}
 	to {opacity: 1}
 }
@@ -88,17 +88,23 @@ body {
 .hero {
     position: absolute;
     left: 5%;
-    top: 30%;
+    top: 20%;
     text-align: left;  
 }
 
-.hero_text {
+.hero_title {
     margin: 0;
-    font-size: 275%;
-    letter-spacing: .1rem;
-    line-height: 3.25rem;
-    word-spacing: .15rem;
-	margin: 0 0 3rem 0;
+    font-size: 400%;
+    text-transform: uppercase;
+    letter-spacing: .125rem;
+    line-height: 4.25rem;
+    word-spacing: .2rem
+}
+
+.hero_text{
+	margin: 6rem auto 4rem auto;
+	font-weight: 100;
+    word-spacing: .2rem;
     text-align: left;  
 }
 
@@ -108,6 +114,7 @@ body {
 	background-color: black;
     color: white;
     display: block;
+	text-transform: uppercase;
     font-weight: 500;
 	font-size: 130%;
     height: 3rem;
@@ -197,3 +204,49 @@ body {
     padding-top: 0;
     margin-top: 0;
 }
+
+/* CONNECTING PAGE */
+.loading-dots {
+    padding-top: 2.5rem;
+    text-align: center;
+    z-index: 5;
+  }
+
+.loading-dots_link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.dot {
+display: inline;
+margin-left: 0.2em;
+margin-right: 0.2em;
+position: relative;
+top: -1em;
+font-size: 3.5em;
+opacity: 0;
+animation: showHideDot 2.5s ease-in-out infinite;
+}
+
+  /* &.one { animation-delay: 0.2s; }
+  &.two { animation-delay: 0.4s; }
+  &.three { animation-delay: 0.6s; } */
+  
+@keyframes showHideDot {
+0% { opacity: 0; }
+50% { opacity: 1; }
+60% { opacity: 1; }
+100% { opacity: 0; }
+}
+
+.please-wait_heading {
+    margin-top: 0;
+    padding-top: 10rem;
+    text-align: center;
+}
+
+.reminder {
+    font-size: 120%;
+    text-align: center;
+}
+  
