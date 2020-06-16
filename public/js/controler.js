@@ -5,7 +5,7 @@ exports.updateDataSql = function update(result, conn, req)
 // insert only if no such record		
 		if (result.length > 0) {
 // data set not empty -> update agent
-			var sql_upd = { 
+			var sql_upd = {
 				"sql": "UPDATE agents SET AgtFirstName = ?, AgtLastName = ?, AgtEmail = ?, AgtBusPhone = ?" + 
 							"WHERE AgentId = ?",
 				"values": [req.body.fname, req.body.lname, req.body.email, req.body.phone, result[0].AgentId]
@@ -40,7 +40,7 @@ exports.updateDataMongo = function update(result, dbo, req)
 		dbo.collection("agents").updateOne(myquery, myobj, function(err, res) {
 			if (err = "NULL") console.log("Update executed");
 //			if (err) throw err;
-		});		
+		});
 	}
 	else
 // data set empty -> insert new agent

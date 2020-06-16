@@ -5,7 +5,6 @@ const mongo = require("mongodb").MongoClient;
 const controler = require("./public/js/controler.js");
 const dp = require("./views/DynPage.js");
 
-
 // connecting to mongo database
 const url = "mongodb://localhost:27017";
 var conn;
@@ -16,7 +15,6 @@ mongo.connect(url, {
   },
   (err, client) => { if (err = "NULL") console.log("Connected to mongo database"); conn = client; }
 );
-
 
 // start server with success log message
 app.listen(8000, ()=>{ console.log("Server started on port 8000");
@@ -30,7 +28,7 @@ lv_view = path.join(__dirname, 'views');
 app.use(express.urlencoded( { extended: true } ));
 
 // js files
-app.use(express.static('public'));
+app.use(express.static(__dirname));
 
 // css-files
 //app.use(express.static('')));
@@ -42,6 +40,10 @@ app.use(express.static('public'));
 app.use(express.static(lv_view, {
 	extensions: ["html"]
 }));
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + "/views/landing.html");
+})
 
 // routing post request and updating data base
 app.post('/register', (req, res, next)=>{	
@@ -61,9 +63,6 @@ app.get("/confirm", (req, res)=>{
     controler.selDataMongo	([email, conn, lv_view, res], dp.genConfirm);
 
 });
-
-
-
 
 // default error handler
 app.use((req, res, next)=>{
