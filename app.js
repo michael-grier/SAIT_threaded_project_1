@@ -10,7 +10,7 @@ app.listen(8000, () =>{ console.log("Server is running")});
 
 //mongoose connection
 const url = "mongodb://localhost/invigulus";
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true,  useCreateIndex: true});
 var db = mongoose.connection;
 
 //this sets up event handling for errors connecting to mongodb
