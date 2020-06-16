@@ -24,7 +24,7 @@ app.listen(8000, ()=>{ console.log("Server started on port 8000");
 
 
 // View directory
-lv_view = path.join(__dirname, 'View');
+lv_view = path.join(__dirname, 'views');
 
 // to render form content
 app.use(express.urlencoded( { extended: true } ));
@@ -43,11 +43,11 @@ app.use(express.static(lv_view, {
  
 
 // routing post request and updating data base
-app.post('/create-agent', (req, res, next)=>{	
+app.post('/register', (req, res, next)=>{	
 
 // update database
-	lname = req.body.lname;
-	controler.selDataMongo([lname, conn, req], controler.updateDataMongo);
+	email = req.body.Email;
+	controler.selDataMongo([email, conn, req], controler.updateDataMongo);
 
 // redirect to confirmation 
 	res.redirect("/confirm");
@@ -57,7 +57,7 @@ app.post('/create-agent', (req, res, next)=>{
 app.get("/confirm", (req, res)=>{
 	
 // reselect and confirm
-    controler.selDataMongo	([lname, conn, lv_view, res], dp.genConfirm);
+    controler.selDataMongo	([email, conn, lv_view, res], dp.genConfirm);
 
 });
 
