@@ -44,13 +44,11 @@
       <div class = "row">
 <!-- Inner Box Start-->
 <!-- Box to Display Webcam Image -->
-        <div class = "col-md-8 boxn justify-c" >
-          <div class= "col">
-            <div><p align = "center"> Webcam Feed </p> </div>
-            <div class = "cameraframe" id="my_camera"></div>
-          </div>
+        <div class = "col-md-9 boxn" >         
+          <div class = "cameraframe" id="my_camera"></div>
         </div>
 <script>
+
   Webcam.set({
     dest_width:351,
     dest_height:290,
@@ -59,27 +57,19 @@
 });
         Webcam.attach('#my_camera');
 </script>
-<!-- Center Spacing Column -->
-        <div class = "col-md"></div>
+
 <!-- Display Images Taken By WebCam -->
         <div class = "col-md-3 boxn">
 <!-- Start of Image Column -->
 <form id="imageform" method = "post">
-<!--          <div>
-            <p align = "center" style="color:#000"> Headshot </p>
-          </div> -->
-          <div class = "boximageframe boxn" >
-            <input id="headshot" type="hidden" name ="hdshot" value ""/>
-          <!--   <div id="headshot" name="hdshot"></div> -->
+          <h6 align = "center" style="color:#000"> Headshot </h6>
+          <div class = "boximageframe " >
+          <div id="headshot" name="hdshot"></div> 
           </div>
-      <!--    <div>
-            <p align = "center" style="color:#000"> Photo ID </p>
-          </div> -->
-          <div class = "boximageframe boxn">
-            <div>
-              <input id="photoid" type="hidden" name ="pid" value ""/>
-    <!--          <div id ="photoid" name="pid"></div> -->
-            </div>
+          <h6 align = "center" style="color:#000"> Photo ID </h6>
+          <div class = "boximageframe">
+            
+          <div id ="photoid" name="pid"></div>
           </div>
 </form>
 <!-- End of Image Column -->
@@ -92,7 +82,7 @@
           <button type="button" onClick="take_headshot()"> Take Headshot </button>
           <button type="button" onClick="take_id()"> Take PhotoID </button>
         </div>
-        <div class = "col-md-1" style="align: right">
+        <div class = "col-md-1" align: right>
           <button type="submit" onClick="return confirm('Do you wish to proceed')"> <a href="#">Continue</a></button>
         </div>
 <!-- Add Image Upload functionality later -->
