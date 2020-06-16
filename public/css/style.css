@@ -18,14 +18,15 @@ body {
 
 /* LANDING PAGE */
 .navigation {
+    background-color: #fff;
     box-shadow: 0px 4px 9px -8px rgba(110,109,110,1);
     display: flex;
     width: 100%;
 }
 
 .navigation_logo {
-    height: 6rem;
-    margin: 0 5rem;
+    height: 4.75rem;
+    margin: .65rem 5rem;
     width: auto;
 }
 
@@ -93,11 +94,11 @@ body {
 
 .hero_text {
     margin: 0;
-    font-size: 350%;
-    letter-spacing: .125rem;
+    font-size: 275%;
+    letter-spacing: .1rem;
     line-height: 3.25rem;
-    word-spacing: .2rem;
-	margin: auto auto 8rem auto;
+    word-spacing: .15rem;
+	margin: 0 0 3rem 0;
     text-align: left;  
 }
 
@@ -116,7 +117,6 @@ body {
     text-align: center;
     text-decoration: none;
 	transition: 0.3s;
-	margin-left: 3rem;
 }
 
 .hero_btn:hover {

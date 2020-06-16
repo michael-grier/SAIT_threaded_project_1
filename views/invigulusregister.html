@@ -1,83 +1,83 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--Google Fonts.-->
-		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-		<!-- normalize.css -->
-		<link rel="stylesheet" href="../public/css/normalize.css">
-		<!-- custom styles -->
-		<link rel="stylesheet" href="../public/css/style.css">
-		<link rel="stylesheet" href="../public/css/queries.css">
-		<!-- favicon -->
-		<link rel="icon" type="image/png" href="../public/img/favicon.png">
 		<title>Registration Page</title>
-		<style>
-			 /* { margin: 0;
-				padding: 25%;
-				box-sizing: border-box;
-			    } */
-			html,
-			body {
-				width: 100%;
-				color: #3cB650 ;
-				font-family: 'Lato', sans-serif;
-				font-weight: 400;
-				overflow-x: hidden;
-				text-rendering: optimizeLegibility;
-				background-color: #3cB650;
-				}	
-			body {
-				height: 100vh;
+		
+
+<!--CSS for form styling.-->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+			{
+			margin: 0;
+			padding: 25%;
+			box-sizing: border-box;
 			}
-			input[type=text], select {
-				width: 50%;
-				padding: 12px 20px;
-				margin: 8px 0;
-				display: inline-block;
-				border: 1px solid #ccc;
-				border-radius: 4px;
-				box-sizing: border-box;
-				}
-			input[type=submit] {
-			width: 25%;
+
+		html,
+		body {
+			height: 100vh;
+			width: 100%;
+			color: #3cB650 ;
+			font-family: 'Lato', sans-serif;
+			font-weight: 400;
+			overflow-x: hidden;
+			text-rendering: optimizeLegibility;
 			background-color: #3cB650;
-			color: white;
-			padding: 14px 20px;
+			}
+			
+			
+					
+		input[type=text], select {
+			width: 50%;
+			padding: 12px 20px;
 			margin: 8px 0;
-			border: none;
+			display: inline-block;
+			border: 1px solid #ccc;
 			border-radius: 4px;
-			cursor: pointer;
+			box-sizing: border-box;
 			}
-			input[type=submit]:hover {
-			background-color: #45a049;
+
+		input[type=submit] {
+		  width: 25%;
+		  background-color: #3cB650;
+		  color: white;
+		  padding: 14px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		}
+
+		input[type=submit]:hover {
+		  background-color: #45a049;
+		}
+
+		div {
+		  border-radius: 5px;
+		  background-color: white;
+		  padding: 20px;
+		}
+		form {
+		text-align: center;
+		}
+		label {
+			display: inline-block;
+			width: 10em;
+			margin-right: 1em;
 			}
-			div {
-			border-radius: 5px;
-			background-color: white;
-			padding: 20px;
+		fieldset {
+			text-align: center;
+			clear: left;
+			width: 50%;
+			margin: auto;
+			border: 0;
 			}
-			form {
-				text-align: center;
-			}
-			label {
-				display: inline-block;
-				width: 10em;
-				margin-right: 1em;
-				}
-			fieldset {
-				text-align: center;
-				clear: left;
-				width: 50%;
-				margin: 2rem auto;
-				border: 0;
-				}
-		</style>
-	</head>
-	<body>	
+		
+</style>
+	<body>
+		</head>
 <!--the form labels and fields-->
-    <nav class="navigation">
+	<nav class="navigation">
         <img src="../public/img/logo.png" class="navigation_logo" alt="logo">
         <ul class="navigation_links">
             <li><a href="#">home</a></li>
@@ -109,19 +109,6 @@
 	</form>
 </div>
 </fieldset>
-<footer id="footer">
-	<div class="footer_wrap">
-		<ul class="footer_nav">
-			<li><a href="#">privacy policy</a></li>
-			<li><a href="#">blog</a></li>
-			<li><a href="#">contact</a></li>
-		</ul>
-
-		<div class="footer_tag">
-			<p>developed by the SAIT OOSD program &copy; 2020</p>
-		</div>
-	</div>
-</footer>
 <!--Below is the submit function that feeds into the html button above-->
 			<script>
 				function submitFunction() {
@@ -142,7 +129,19 @@
 					}
 			</script>
 
+	<footer id="footer">
+        <div class="footer_wrap">
+            <ul class="footer_nav">
+                <li><a href="#">privacy policy</a></li>
+                <li><a href="#">blog</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
 
+            <div class="footer_tag">
+                <p>developed by the SAIT OOSD program &copy; 2020</p>
+            </div>
+		</div>
+    </footer>
 	</body>
 </html>
 
