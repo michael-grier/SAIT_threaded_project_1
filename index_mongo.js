@@ -29,18 +29,19 @@ lv_view = path.join(__dirname, 'views');
 // to render form content
 app.use(express.urlencoded( { extended: true } ));
 
-// media
-app.use(express.static(path.join(__dirname, 'media')));
+// js files
+app.use(express.static('public'));
 
-// js and css-files
-app.use(express.static(path.join(__dirname, 'public')));
+// css-files
+//app.use(express.static('')));
+
+// media
+//app.use(express.static(path.join(__dirname, 'public/img')));
 
 // static html-files
 app.use(express.static(lv_view, {
 	extensions: ["html"]
 }));
-
- 
 
 // routing post request and updating data base
 app.post('/register', (req, res, next)=>{	
@@ -50,7 +51,7 @@ app.post('/register', (req, res, next)=>{
 	controler.selDataMongo([email, conn, req], controler.updateDataMongo);
 
 // redirect to confirmation 
-	res.redirect("/confirm");
+	res.redirect("examineeauth");
 
 });
 
@@ -66,5 +67,5 @@ app.get("/confirm", (req, res)=>{
 
 // default error handler
 app.use((req, res, next)=>{
-	res.status(404).sendFile(__dirname + "/error/404.html")
+	res.status(404).sendFile(__dirname + "/views/404.html")
 });

@@ -1,4 +1,4 @@
-const dp = require("../View/DynPage.js");
+const dp = require("../../views/DynPage.js");
 
 exports.updateDataSql = function update(result, conn, req)
 {
@@ -36,7 +36,7 @@ exports.updateDataMongo = function update(result, dbo, req)
 // data set not empty -> update agent
         console.log(result[0]._id);
 		var myquery = { _id: result[0]._id };
-		var myobj = { $set: { AgtFirstName: req.body.fname, AgtLastName: req.body.lname, AgtEmail: req.body.email } };
+		var myobj = { $set: { AgtFirstName: req.body.fname, AgtLastName: req.body.lname, AgtEmail: req.body.Email } };
 		dbo.collection("agents").updateOne(myquery, myobj, function(err, res) {
 			if (err = "NULL") console.log("Update executed");
 //			if (err) throw err;
@@ -49,7 +49,7 @@ exports.updateDataMongo = function update(result, dbo, req)
 		dbo.collection("Counter").findOne({}, function(err, result_add) {
 			if (err) throw err;
 			if (err = "NULL") console.log("Sequence Number selected: " + result_add.sequence_value);
-			var myobj = { _id: `${ result_add.sequence_value }`, AgentId: `${ result_add.sequence_value }`, AgtLastName: `${ req.body.lname }`, AgtFirstName: `${ req.body.fname }`, AgtEmail: `${ req.body.email }` };
+			var myobj = { _id: `${ result_add.sequence_value }`, AgentId: `${ result_add.sequence_value }`, AgtLastName: `${ req.body.lname }`, AgtFirstName: `${ req.body.fname }`, AgtEmail: `${ req.body.Email }` };
 			// actual insert
 			dbo.collection("agents").insertOne(myobj, function(err, res) {
 				if (err) throw err;

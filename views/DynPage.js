@@ -1,5 +1,5 @@
 const fs = require("fs");
-const greeting = require("../Module/greeting.js");
+const greeting = require("../public/js/greeting.js");
 
 exports.genConfirm = (result, lv_view, res)=>{
 
