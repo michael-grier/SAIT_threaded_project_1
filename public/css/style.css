@@ -93,12 +93,11 @@ body {
 }
 
 .hero_title {
-    margin: 2rem 0 0 0;
-    font-size: 300%;
-    text-transform: uppercase;
-    letter-spacing: .125rem;
-    line-height: 4.25rem;
-    word-spacing: .2rem
+	font-size: 275%;
+    letter-spacing: .1rem;
+    line-height: 3.25rem;
+    word-spacing: .15rem;
+	margin: 4rem auto 6rem auto;
 }
 
 .hero_text{
