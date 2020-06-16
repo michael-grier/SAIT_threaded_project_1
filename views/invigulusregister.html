@@ -89,7 +89,7 @@
 	<form>
 	
 		<h1>Examinee Registration</h1>
-		<form id="RegistrationForm" method="get" action="bouncer.php"> 
+		<form id="RegistrationForm" method="post" action="/register"> 
         <label for="fname">First Name:</label>
             <input type="text"id="fname" name="fname" required="required" /><br>
         <label for="lname">Last Name:</label>
@@ -111,7 +111,7 @@
 </fieldset>
 <!--Below is the submit function that feeds into the html button above-->
 			<script>
-				function submitFunction() {
+				/*function submitFunction() {
 					var fnamevalidate = document.getElementById("fname");
 					var lnamevalidate = document.getElementById("lname");
 					var emailvalidate = document.getElementById("Email");
@@ -126,7 +126,7 @@
 					else {
 							confirm("Are you sure you want to submit?");
 						}
-					}
+					}*/
 			</script>
 
 	<footer id="footer">

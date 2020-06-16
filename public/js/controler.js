@@ -102,7 +102,7 @@ exports.selDataMongo = (parameters, callbackFunc)=>{
 
 // run query to get record
 	var dbo = parameters[1].db("travelexperts");
-	var query = { AgtLastName: `${ parameters[0] }`};
+	var query = { AgtEmail: `${ parameters[0] }`};
 
 // update view or database depending on callback function
 	dbo.collection("agents").find(query).toArray(function(err, result) {
