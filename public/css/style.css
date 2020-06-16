@@ -18,6 +18,7 @@ body {
 
 /* LANDING PAGE */
 .navigation {
+    background-color: #fff;
     box-shadow: 0px 4px 9px -8px rgba(110,109,110,1);
     display: flex;
     width: 100%;
