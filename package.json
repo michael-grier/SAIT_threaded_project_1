@@ -15,6 +15,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongodb": "^3.5.8",
-    "mongoose": "^5.9.18"
+    "mongoose": "^5.9.18",
+    "webcamjs": "^1.0.26"
   }
 }

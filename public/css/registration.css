@@ -1,0 +1,115 @@
+/* Edvin Lin OOSD 2020*/
+.greenbox {
+  width: 84vw;
+  margin: 0 auto;
+  padding: 30px 20px;
+  min-height: 85vh;
+}
+
+.invigulus-logo-color {
+  background-color: #3CB650;
+}
+
+.colortodiff {
+  background-color:rgba(60,182,80,03.0-);
+}
+
+.boximageframe {
+  background-color: #fff;
+  border: 1px solid black
+  padding: 1px;
+  margin: 1px;
+  height:301px;
+  width:363px;
+  }
+
+.boxn {
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+  background-clip: padding-box;
+  align-items: center;
+  justify-content: center;
+  }
+
+.clearfix {
+    overflow: auto;
+  }
+.cameraframe {
+  display: block;
+  height: 660px;
+  width: auto;
+}
+
+/* W3 Schools Popup chat CSS (Temp) */
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 10px 12px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 50px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
