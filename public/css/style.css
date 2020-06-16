@@ -93,8 +93,8 @@ body {
 }
 
 .hero_title {
-    margin: 0;
-    font-size: 400%;
+    margin: 2rem 0 0 0;
+    font-size: 300%;
     text-transform: uppercase;
     letter-spacing: .125rem;
     line-height: 4.25rem;
@@ -102,7 +102,7 @@ body {
 }
 
 .hero_text{
-	margin: 6rem auto 4rem auto;
+	margin: 2rem auto 3rem auto;
 	font-weight: 100;
     word-spacing: .2rem;
     text-align: left;  
@@ -114,13 +114,13 @@ body {
 	background-color: black;
     color: white;
     display: block;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
     font-weight: 500;
 	font-size: 130%;
     height: 3rem;
 	max-width: 200px;
     letter-spacing: .06rem;
-    padding-top: .75rem;
+    padding-top: .65rem;
     text-align: center;
     text-decoration: none;
 	transition: 0.3s;
