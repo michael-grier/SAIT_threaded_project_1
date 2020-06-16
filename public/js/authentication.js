@@ -11,12 +11,26 @@ function take_headshot() {
 }
 
 function take_id() {
+
+  try {
+    //show a user picture and send data to server
+    Webcam.snap(function (data_uri) {
+      const imgSRC = data_uri;
+      const formdata = new FormData();
+      formdata.append("photoid", imgSRC);
+      var ajax = new XMLHttpRequest();
+      ajax.open("POST", "/examineeauth");
+      ajax.send(formdata);
+      
+      // display results in page
+      document.getElementById('photoid').innerHTML =
+        '<img id="stuphotoid" src="' + data_uri + '"/>';
+    });
+  } catch(e) {
+    console.error(e);
+  }
   // take snapshot and get image data
-  Webcam.snap(function (data_uri) {
-    // display results in page
-    document.getElementById('photoid').innerHTML =
-      '<img id="stuphotoid" src="' + data_uri + '"/>';
-  });
+
 
 }
 /* https://www.npmjs.com/package/multer-gridfs-storage */

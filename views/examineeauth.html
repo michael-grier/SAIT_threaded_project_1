@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-<!-- Edvin Lin OOSD 2020 Currently only meant to be displayed on 1920x1080-->
+<!-- Edvin Lin OOSD 2020 Currently only meant to be displayed on 1920x1080 100%-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
@@ -64,20 +64,24 @@
 <!-- Display Images Taken By WebCam -->
         <div class = "col-md-3 boxn">
 <!-- Start of Image Column -->
-          <div>
+<form id="imageform" method = "post">
+<!--          <div>
             <p align = "center" style="color:#000"> Headshot </p>
-          </div>
+          </div> -->
           <div class = "boximageframe boxn" >
-            <div id="headshot"></div>
+            <!-- <input id="headshot" type="hidden" name ="hdshot" value ""/> -->
+            <div id="headshot" name="hdshot"></div>
           </div>
-          <div>
+      <!--    <div>
             <p align = "center" style="color:#000"> Photo ID </p>
-          </div>
+          </div> -->
           <div class = "boximageframe boxn">
             <div>
-              <div id ="photoid"></div>
+              <!-- <input id="photoid" type="hidden" name ="pid" value ""/> -->
+             <div id ="photoid" name="pid"></div>
             </div>
           </div>
+</form>
 <!-- End of Image Column -->
         </div>
 <!-- End of Row -->
@@ -89,7 +93,7 @@
           <button type="button" onClick="take_id()"> Take PhotoID </button>
         </div>
         <div class = "col-md-1" style="align: right">
-          <button type="button" onClick="return confirm('Do you wish to proceed')"> <a href="#">Continue</a></button>
+          <button type="submit" onClick="return confirm('Do you wish to proceed')"> <a href="#">Continue</a></button>
         </div>
 <!-- Add Image Upload functionality later -->
       </div>
