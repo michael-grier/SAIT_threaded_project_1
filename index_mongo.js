@@ -30,7 +30,7 @@ lv_view = path.join(__dirname, 'views');
 app.use(express.urlencoded( { extended: true } ));
 
 // js files
-app.use(express.static('public'));
+app.use(express.static(__dirname));
 
 // css-files
 //app.use(express.static('')));
@@ -42,6 +42,12 @@ app.use(express.static('public'));
 app.use(express.static(lv_view, {
 	extensions: ["html"]
 }));
+
+
+// landing page
+app.get("/", (req, res) => {
+    res.redirect("/landing");
+}); 
 
 // routing post request and updating data base
 app.post('/register', (req, res, next)=>{	
