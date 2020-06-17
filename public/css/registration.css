@@ -11,6 +11,22 @@
   background-color: #3CB650;
 }
 
+.camera_btn {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color:#174818;
+  color: white;
+  font-weight: 300;
+  font-size: 100%;
+  height: 2rem;
+  max-width: 200px;
+  letter-spacing: .03rem;
+  padding: .2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
 .boximageframe {
   display: block;
   background-color: #fff;
