@@ -1,147 +1,149 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--Google Fonts.-->
-		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-		<!-- normalize.css -->
-		<link rel="stylesheet" href="../public/css/normalize.css">
-		<!-- custom styles -->
-		<link rel="stylesheet" href="../public/css/style.css">
-		<link rel="stylesheet" href="../public/css/queries.css">
-		<!-- favicon -->
-		<link rel="icon" type="image/png" href="../public/img/favicon.png">
-		<title>Registration Page</title>
-		<style>
-			 /* { margin: 0;
-				padding: 25%;
-				box-sizing: border-box;
-			    } */
-			html,
-			body {
-				width: 100%;
-				color: #3cB650 ;
-				font-family: 'Lato', sans-serif;
-				font-weight: 400;
-				overflow-x: hidden;
-				text-rendering: optimizeLegibility;
-				background-color: #3cB650;
-				}	
-			body {
-				height: 100vh;
-			}
-			input[type=text], select {
-				width: 50%;
-				padding: 12px 20px;
-				margin: 8px 0;
-				display: inline-block;
-				border: 1px solid #ccc;
-				border-radius: 4px;
-				box-sizing: border-box;
-				}
-			input[type=submit] {
-			width: 25%;
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Google Fonts.-->
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+	<!-- normalize.css -->
+	<link rel="stylesheet" href="../public/css/normalize.css">
+	<!-- custom styles -->
+	<link rel="stylesheet" href="../public/css/style.css">
+	<link rel="stylesheet" href="../public/css/queries.css">
+	<!-- favicon -->
+	<link rel="icon" type="image/png" href="../public/img/favicon.png">
+	<title>Registration Page</title>
+	<style>
+		html,
+		body {
+			width: 100%;
+			color: #3cB650 ;
+			font-family: 'Lato', sans-serif;
+			font-weight: 400;
+			overflow-x: hidden;
+			text-rendering: optimizeLegibility;
 			background-color: #3cB650;
-			color: white;
-			padding: 14px 20px;
+			}	
+		body {
+			height: 100vh;
+		}
+		input[type=text], select {
+			width: 50%;
+			padding: 12px 20px;
 			margin: 8px 0;
-			border: none;
+			display: inline-block;
+			border: 1px solid #ccc;
 			border-radius: 4px;
-			cursor: pointer;
+			box-sizing: border-box;
 			}
-			input[type=submit]:hover {
-			background-color: #45a049;
+		input[type=submit] {
+		width: 25%;
+		background-color: #3cB650;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		}
+		input[type=submit]:hover {
+		background-color: #45a049;
+		}
+		div {
+		border-radius: 5px;
+		background-color: white;
+		padding: 20px;
+		}
+		form {
+			text-align: center;
+		}
+		label {
+			display: inline-block;
+			width: 10em;
+			margin-right: 1em;
 			}
-			div {
-			border-radius: 5px;
-			background-color: white;
-			padding: 20px;
+		fieldset {
+			text-align: center;
+			clear: left;
+			width: 50%;
+			margin: 2rem auto;
+			border: 0;
 			}
-			form {
-				text-align: center;
-			}
-			label {
-				display: inline-block;
-				width: 10em;
-				margin-right: 1em;
-				}
-			fieldset {
-				text-align: center;
-				clear: left;
-				width: 50%;
-				margin: 2rem auto;
-				border: 0;
-				}
-		</style>
-	</head>
-	<body>	
+	</style>
+</head>
+<body>	
 <!--the form labels and fields-->
-    <nav class="navigation">
-        <img src="../public/img/logo.png" class="navigation_logo" alt="logo">
-        <ul class="navigation_links">
-            <li><a href="#">home</a></li>
-            <li><a href="#">about us</a></li>
-        </ul>
-    </nav>
-<fieldset>
-	<div>
-	
-		<h1>Examinee Registration</h1>
-		<form id="RegistrationForm" method="post" action="/register"> 
-        <label for="fname">First Name:</label>
-            <input type="text" id="fname" name="fname" required="required" /><br>
-        <label for="lname">Last Name:</label>
-            <input type="text"id="lname" name="lname" required="required" /><br>
-        <label for="Email">Email:</label>
-            <input type="text"id="Email" name="Email" required="required" /><br>
-		<label for="examid">Exam ID:</label>
-            <input type="text"id="examid" name="examid" required="required"/><br>
-		<label for="password">Examinee ID:</label>
-            <input type="text" id="examineeid" name="examineeid" required="required" /><br>
-		<input type="checkbox" name="termsconditions" 
-			 value="termsconditions" id="termsconditions" checked="checked"/> I agree to the <a style="color:#3cB650" href='#'>terms and conditions</a> and <a style="color:#3cB650" href='#'>privacy policy.</a><br/>
-<!--submit and reset buttons-->		
-		
-		<input type="submit" value="Submit" onclick="submitFunction()">
-
-	</form>
-</div>
-</fieldset>
-<footer id="footer">
-	<div class="footer_wrap">
-		<ul class="footer_nav">
-			<li><a href="#">privacy policy</a></li>
-			<li><a href="#">blog</a></li>
-			<li><a href="#">contact</a></li>
+	<nav class="navigation">
+		<img src="../public/img/logo.png" class="navigation_logo" alt="logo">
+		<ul class="navigation_links">
+			<li><a href="#">home</a></li>
+			<li><a href="#">about us</a></li>
 		</ul>
-
-		<div class="footer_tag">
-			<p>developed by the SAIT OOSD program &copy; 2020</p>
+	</nav>
+	<fieldset>
+		<div>
+		
+			<h1>Examinee Registration</h1>
+			<form id="RegistrationForm" method="post" action="/register"> 
+				<label for="fname">First Name:</label>
+					<input type="text" id="fname" name="fname" required="required" /><br>
+				<label for="lname">Last Name:</label>
+					<input type="text"id="lname" name="lname" required="required" /><br>
+				<label for="Email">Email:</label>
+					<input type="text"id="Email" name="Email" required="required" onchange="checkEmail(this)" /><br>
+				<label for="examid">Exam ID:</label>
+					<input type="text"id="examid" name="examid" required="required"/><br>
+				<label for="password">Examinee ID:</label>
+					<input type="text" id="examineeid" name="examineeid" required="required" /><br>
+				<input type="checkbox" name="termsconditions" 
+					value="termsconditions" id="termsconditions" checked="checked"/> I agree to the <a style="color:#3cB650" href='#'>terms and conditions</a> and <a style="color:#3cB650" href='#'>privacy policy.</a><br/>
+				<!--submit and reset buttons-->		
+				<input type="submit" value="Submit" onclick="submitFunction()">
+			</form>
 		</div>
-	</div>
-</footer>
-<!--Below is the submit function that feeds into the html button above-->
-			<script>
-				function submitFunction() {
-					var fnamevalidate = document.getElementById("fname");
-					var lnamevalidate = document.getElementById("lname");
-					var emailvalidate = document.getElementById("Email");
-					var usernamevalidate = document.getElementById("examid");
-					var passwordvalidate = document.getElementById("examineeid");
-					var termsvalidate = document.getElementById("termsconditions").checked;
+	</fieldset>
+	<footer id="footer">
+		<div class="footer_wrap">
+			<ul class="footer_nav">
+				<li><a href="#">privacy policy</a></li>
+				<li><a href="#">blog</a></li>
+				<li><a href="#">contact</a></li>
+			</ul>
 
-					if (fnamevalidate.value == ""||lnamevalidate.value == ""||emailvalidate.value == ""||examid.value == ""||examineeid.value == ""||termsvalidate == false)
-						{
-							alert("A required field is missing");
-						}
-					else {
-							confirm("Are you sure you want to submit?");
-						}
-					}
-			</script>
+			<div class="footer_tag">
+				<p>developed by the SAIT OOSD program &copy; 2020</p>
+			</div>
+		</div>
+	</footer>
+			
+	<script>
+		// Below is the submit function that feeds into the html button above
+		function checkEmail(email) {
+			const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+			if(!re.test(email.value)) 
+			{
+			alert("The email field has an invalid entry");
+			}
+			}
 
 
-	</body>
+		function submitFunction() {
+			var fnamevalidate = document.getElementById("fname");
+			var lnamevalidate = document.getElementById("lname");
+			var emailvalidate = document.getElementById("Email");
+			var usernamevalidate = document.getElementById("examid");
+			var passwordvalidate = document.getElementById("examineeid");
+			var termsvalidate = document.getElementById("termsconditions").checked;
+
+			if (fnamevalidate.value == ""||lnamevalidate.value == ""||emailvalidate.value == ""||examid.value == ""||examineeid.value == ""||termsvalidate == false)
+				{
+					alert("A required field is missing");
+				}
+			else {
+					confirm("Are you sure you want to submit?");
+				}
+			}	
+	</script>
+</body>
 </html>
-
