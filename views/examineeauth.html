@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-<!-- Edvin Lin OOSD 2020 Currently only meant to be displayed on 1920x1080-->
+<!-- Edvin Lin OOSD 2020 Currently only meant to be displayed on 1920x1080 100%-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
@@ -44,13 +44,11 @@
       <div class = "row">
 <!-- Inner Box Start-->
 <!-- Box to Display Webcam Image -->
-        <div class = "col-md-8 boxn justify-c" >
-          <div class= "col">
-            <div><p align = "center"> Webcam Feed </p> </div>
-            <div class = "cameraframe" id="my_camera"></div>
-          </div>
+        <div class = "col-md-9 boxn" >         
+          <div class = "cameraframe" id="my_camera"></div>
         </div>
 <script>
+
   Webcam.set({
     dest_width:351,
     dest_height:290,
@@ -59,25 +57,21 @@
 });
         Webcam.attach('#my_camera');
 </script>
-<!-- Center Spacing Column -->
-        <div class = "col-md"></div>
+
 <!-- Display Images Taken By WebCam -->
         <div class = "col-md-3 boxn">
 <!-- Start of Image Column -->
-          <div>
-            <p align = "center" style="color:#000"> Headshot </p>
+<form id="imageform" method = "post">
+          <h6 align = "center" style="color:#000"> Headshot </h6>
+          <div class = "boximageframe " >
+          <div id="headshot" name="hdshot"></div> 
           </div>
-          <div class = "boximageframe boxn" >
-            <div id="headshot"></div>
+          <h6 align = "center" style="color:#000"> Photo ID </h6>
+          <div class = "boximageframe">
+            
+          <div id ="photoid" name="pid"></div>
           </div>
-          <div>
-            <p align = "center" style="color:#000"> Photo ID </p>
-          </div>
-          <div class = "boximageframe boxn">
-            <div>
-              <div id ="photoid"></div>
-            </div>
-          </div>
+</form>
 <!-- End of Image Column -->
         </div>
 <!-- End of Row -->
@@ -85,11 +79,11 @@
  <!-- Image Taking Buttons -->
       <div class = "row">
         <div class = "col-md-11">
-          <button type="button" onClick="take_headshot()"> Take Headshot </button>
-          <button type="button" onClick="take_id()"> Take PhotoID </button>
+          <button type="button" class="camera_btn" onClick="take_headshot()"> Take Headshot </button>
+          <button type="button" class="camera_btn" onClick="take_id()"> Take PhotoID </button>
         </div>
-        <div class = "col-md-1" style="align: right">
-          <button type="button" onClick="return confirm('Do you wish to proceed')"> <a href="#">Continue</a></button>
+        <div class = "col-md-1" align: right>
+          <button type="submit" class="camera_btn" onClick="return confirm('Do you wish to proceed')"> <a href="#">Continue</a></button>
         </div>
 <!-- Add Image Upload functionality later -->
       </div>
