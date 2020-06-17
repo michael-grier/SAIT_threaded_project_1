@@ -4,6 +4,7 @@ const app = express();
 const mongo = require("mongodb").MongoClient;
 const controler = require("./public/js/controler.js");
 const dp = require("./views/DynPage.js");
+const bodyParser = require('body-parser')
 
 // connecting to mongo database
 const url = "mongodb://localhost:27017";
@@ -26,6 +27,12 @@ lv_view = path.join(__dirname, 'views');
 
 // to render form content
 app.use(express.urlencoded( { extended: true } ));
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+ 
+// parse application/json
+app.use(bodyParser.json())
 
 // js files
 app.use(express.static(__dirname));
@@ -54,8 +61,11 @@ app.post('/register', (req, res, next)=>{
 
 // redirect to confirmation 
 	res.redirect("examineeauth");
-
 });
+
+app.post('/examineeauth', (req, res) => {
+  console.log('req.body:', req.body)
+})
 
 app.get("/confirm", (req, res)=>{
 	

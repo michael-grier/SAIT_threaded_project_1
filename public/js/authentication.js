@@ -20,6 +20,7 @@ function take_id() {
       formdata.append("photoid", imgSRC);
       var ajax = new XMLHttpRequest();
       ajax.open("POST", "/examineeauth");
+      ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       ajax.send(formdata);
       
       // display results in page
