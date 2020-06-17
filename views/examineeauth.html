@@ -1,97 +1,100 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-<!-- Edvin Lin OOSD 2020 Currently only meant to be displayed on 1920x1080 100%-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-<!-- Bootstrap JS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<!-- normalize.css -->
-    <link rel="stylesheet" href="../public/css/normalize.css">
-<!--Webcam.js-->
-    <script src="../public/js/webcam.min.js"></script>
-<!-- custom styles -->
-    <link rel="stylesheet" href="../public/css/style.css">
-    <link rel="stylesheet" href="../public/css/queries.css">
-<!-- Student Code -->
-    <link rel="stylesheet" href="../public/css/registration.css" type="text/css">
-    <script src="../public/js/authentication.js"></script>
-    <script src="../public/js/techsupport.js"></script>
-  </head>
+
+<head>
+  <!-- Edvin Lin OOSD 2020 Currently only meant to be displayed on 1920x1080 100%-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- Bootstrap JS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- normalize.css -->
+  <link rel="stylesheet" href="../public/css/normalize.css">
+  <!--Webcam.js-->
+  <script src="../public/js/webcam.min.js"></script>
+  <!-- custom styles -->
+  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="stylesheet" href="../public/css/queries.css">
+  <!-- Student Code -->
+  <link rel="stylesheet" href="../public/css/registration.css" type="text/css">
+  <script src="../public/js/authentication.js"></script>
+  <script src="../public/js/techsupport.js"></script>
+</head>
 
 <!-- Start of Body -->
+
 <body>
-<!-- Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navigation">
-      <img src="../public/img/logo.png" class="navigation_logo" alt="logo">
-      <ul class="navigation_links">
-          <li><a href="#">home</a></li>
-          <li><a href="#">about us</a></li>
-      </ul>
+    <img src="../public/img/logo.png" class="navigation_logo" alt="logo">
+    <ul class="navigation_links">
+      <li><a href="#">home</a></li>
+      <li><a href="#">about us</a></li>
+    </ul>
   </nav>
 
-<div class = "greenbox invigulus-logo-color">
-<!-- Outer Box Start-->
-  <div class= "container-fluid">
+  <div class="greenbox invigulus-logo-color">
+    <!-- Outer Box Start-->
+    <div class="container-fluid">
       <h5 align="center"> User Authentication </h5>
-      <div class = "row">
-<!-- Inner Box Start-->
-<!-- Box to Display Webcam Image -->
-        <div class = "col-md-9 boxn" >         
-          <div class = "cameraframe" id="my_camera"></div>
+      <div class="row">
+        <!-- Inner Box Start-->
+        <!-- Box to Display Webcam Image -->
+        <div class="col-md-9 boxn">
+          <div class="cameraframe" id="my_camera"></div>
         </div>
-<script>
+        <script>
 
-  Webcam.set({
-    dest_width:351,
-    dest_height:290,
-    image_format: 'jpeg',
-    jpeg_quality: 90
-});
-        Webcam.attach('#my_camera');
-</script>
+          Webcam.set({
+            dest_width: 351,
+            dest_height: 290,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+          });
+          Webcam.attach('#my_camera');
+        </script>
 
-<!-- Display Images Taken By WebCam -->
-        <div class = "col-md-3 boxn">
-<!-- Start of Image Column -->
-<form id="imageform" method = "post">
-          <h6 align = "center" style="color:#000"> Headshot </h6>
-          <div class = "boximageframe " >
-          <div id="headshot" name="hdshot"></div> 
-          </div>
-          <h6 align = "center" style="color:#000"> Photo ID </h6>
-          <div class = "boximageframe">
-            
-          <div id ="photoid" name="pid"></div>
-          </div>
-</form>
-<!-- End of Image Column -->
+        <!-- Display Images Taken By WebCam -->
+        <div class="col-md-3 boxn">
+          <!-- Start of Image Column -->
+          <form id="imageform" method="post">
+            <h6 align="center" style="color:#000"> Headshot </h6>
+            <div class="boximageframe ">
+              <div id="headshot" name="hdshot"></div>
+            </div>
+            <h6 align="center" style="color:#000"> Photo ID </h6>
+            <div class="boximageframe">
+
+              <div id="photoid" name="pid"></div>
+            </div>
+          </form>
+          <!-- End of Image Column -->
         </div>
-<!-- End of Row -->
+        <!-- End of Row -->
       </div>
- <!-- Image Taking Buttons -->
-      <div class = "row">
-        <div class = "col-md-11">
+      <!-- Image Taking Buttons -->
+      <div class="row">
+        <div class="col-md-11">
           <button type="button" class="camera_btn" onClick="take_headshot()"> Take Headshot </button>
           <button type="button" class="camera_btn" onClick="take_id()"> Take PhotoID </button>
         </div>
-        <div class = "col-md-1" align: right>
-          <button type="submit" class="camera_btn" onClick="return confirm('Do you wish to proceed')"> <a href="#">Continue</a></button>
+        <div class="col-md-1" align: right>
+          <button type="submit" class="camera_btn" onClick="return confirm('Do you wish to proceed')"> <a
+              href="#">Continue</a></button>
         </div>
-<!-- Add Image Upload functionality later -->
+        <!-- Add Image Upload functionality later -->
       </div>
     </div>
 
-<!-- End of Outer Box -->
+    <!-- End of Outer Box -->
 
-<!-- W3 Schools js popup chat -->
+    <!-- W3 Schools js popup chat -->
   </div>
   <div class="chat-popup" id="myForm">
     <form class="form-container">
@@ -105,22 +108,23 @@
       <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
     </form>
 
-<!-- End of Chat -->
+    <!-- End of Chat -->
   </div>
-</main>
-  </body>
-  <footer id="footer">
-      <div class="footer_wrap">
-          <ul class="footer_nav">
-              <li><a href="#">privacy policy</a></li>
-              <li><a href="#">blog</a></li>
-              <li><a href="#">contact</a></li>
-          </ul>
+  </main>
+</body>
+<footer id="footer">
+  <div class="footer_wrap">
+    <ul class="footer_nav">
+      <li><a href="#">privacy policy</a></li>
+      <li><a href="#">blog</a></li>
+      <li><a href="#">contact</a></li>
+    </ul>
 
-          <div class="footer_tag">
-              <p>developed by the SAIT OOSD program &copy; 2020</p>
-          </div>
-          <button type="button" onclick="openForm()" align = "right"> Help </help>
-      </div>
-  </footer>
+    <div class="footer_tag">
+      <p>developed by the SAIT OOSD program &copy; 2020</p>
+    </div>
+    <button type="button" onclick="openForm()" align="right"> Help </help>
+  </div>
+</footer>
+
 </html>

@@ -6,6 +6,9 @@ const controler = require("./public/js/controler.js");
 const dp = require("./views/DynPage.js");
 const bodyParser = require('body-parser')
 
+// this package is for multipart form data(image data) from front end --> /examineeauth 
+const formidable = require('formidable'), util = require('util');
+
 // connecting to mongo database
 const url = "mongodb://localhost:27017";
 var conn;
@@ -64,7 +67,27 @@ app.post('/register', (req, res, next)=>{
 });
 
 app.post('/examineeauth', (req, res) => {
-  console.log('req.body:', req.body)
+  // console.log('req.body:', req)
+  // console.log('req:', req)
+  const form = new formidable.IncomingForm();
+
+  form.parse(req, ((err, fields, files) => {
+    if( err ) {
+      console.error(err.message);
+      return ;
+    }
+
+    const agentPicPath = files.webcam.path;
+    const agentPicDate = files.webcam.lastModifiedDate;
+
+    res.writeHead(200, {'content-type' : 'text/plain'});
+    res.write('receive upload: \n\n');
+
+    controler.insertPic([email, conn, agentPicPath, agentPicDate])
+    // console.log(files, filePath);
+    res.end(util.inspect({fields: fields, files: files}));
+  }));
+
 })
 
 app.get("/confirm", (req, res)=>{

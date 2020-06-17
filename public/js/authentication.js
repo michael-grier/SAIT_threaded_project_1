@@ -15,19 +15,36 @@ function take_id() {
   try {
     //show a user picture and send data to server
     Webcam.snap(function (data_uri) {
-      const imgSRC = data_uri;
-      const formdata = new FormData();
-      formdata.append("photoid", imgSRC);
-      var ajax = new XMLHttpRequest();
-      ajax.open("POST", "/examineeauth");
-      ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      ajax.send(formdata);
-      
+     
       // display results in page
       document.getElementById('photoid').innerHTML =
         '<img id="stuphotoid" src="' + data_uri + '"/>';
+
+      Webcam.on('uploadProgress', function (progress) {
+        // Upload in progress
+        // 'progress' will be between 0.0 and 1.0
+        console.log('uploadProgress:', progress)
+   
+      });
+
+      Webcam.on('uploadComplete', function (code, text) {
+        // Upload complete!
+        // 'code' will be the HTTP response code from the server, e.g. 200
+        // 'text' will be the raw response content
+        console.log('code:', code)
+        console.log('text:', text)
+      });
+
+      Webcam.upload(data_uri, '/examineeauth', function (code, text) {
+        // Upload complete!
+        // 'code' will be the HTTP response code from the server, e.g. 200
+        // 'text' will be the raw response content
+
+        console.log('code:', code)
+        console.log('text:', text)
+      })
     });
-  } catch(e) {
+  } catch (e) {
     console.error(e);
   }
   // take snapshot and get image data
