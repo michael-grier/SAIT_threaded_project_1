@@ -14,7 +14,8 @@
     <link rel="icon" type="image/png" href="../public/img/favicon.png">
     <title>Invigilus Exam Registration</title>
 	<!-- script -->
-	<script src="../public/js/script.js"></script>
+	<script src="../public/js/script.js">addReminder();</script>
+	<script>addReminder();</script>
 </head>
 <body>
     <nav class="navigation">
@@ -27,13 +28,13 @@
 
     <!-- MAIN CONTENT GOES HERE -->
     <main id="main">
-        <h1 class="please-wait_heading">Please wait while we connect to your exam</h1>
-        <div class="loading-dots">
-            <a class="loading-dots_link" href="/thanks">
-                <h1 class="dot one">.</h1><h1 class="dot two">.</h1><h1 class="dot three">.</h1>
-            </a>
-          </div>
-        <h4 class="reminder">remember, cell phone use is not permitted during an exam</h4>
+		<h1 class="please-wait_heading">Please wait while we connect to your exam</h1>
+		<div class="loading-dots">
+			<a class="loading-dots_link" href="/thanks">
+				<h1 class="dot one">.</h1><h1 class="dot two">.</h1><h1 class="dot three">.</h1>
+			</a>
+		</div>
+		<h4 class="reminder"><script>document.write(reminders[i])</script></h4>
     </main>
 
     <footer id="footer">
