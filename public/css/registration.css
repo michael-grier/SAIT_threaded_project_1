@@ -42,10 +42,14 @@
   }
 
 .cameraframe {
-  display: block;
   height: 660px;
   width: auto;
+  overflow: hidden;
 }
+.noverflow{
+  overflow: hidden;
+}
+
 
 /* W3 Schools Popup chat CSS (Temp) */
 
