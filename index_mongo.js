@@ -3,12 +3,14 @@ const path = require("path");
 const app = express();
 const mongo = require("mongodb").MongoClient;
 const controler = require("./public/js/controler.js");
-const dp = require("./views/DynPage.js");
+const dp = require("./views/thanks.js");
 
 
 // connecting to mongo database
 const url = "mongodb://localhost:27017";
 var conn;
+var email;
+
 // try to connect
 mongo.connect(url, {
     useNewUrlParser: true,
@@ -61,11 +63,23 @@ app.post('/register', (req, res, next)=>{
 
 });
 
-app.get("/confirm", (req, res)=>{
+app.get("/thanks", (req, res)=>{
 	
-// reselect and confirm
-    controler.selDataMongo	([email, conn, lv_view, res], dp.genConfirm);
+// reselect examinee and generate thanks page 
+    controler.selDataMongo	([email, conn, res], dp.genThanks);
 
+
+// run query to get record
+//	var dbo = conn.db("travelexperts");
+//	var query = { AgtEmail: `${ email }`};
+
+
+// update view or database depending on callback function
+//	dbo.collection("agents").find(query).toArray(function(err, result) {
+//		if (err) throw err;
+//		dp.genThanks(result, res);
+//	});
+	
 });
 
 

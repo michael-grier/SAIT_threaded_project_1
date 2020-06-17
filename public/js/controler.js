@@ -1,4 +1,4 @@
-const dp = require("../../views/DynPage.js");
+const dp = require("../../views/thanks.js");
 
 exports.updateDataSql = function update(result, conn, req)
 {
@@ -104,15 +104,15 @@ exports.selDataMongo = (parameters, callbackFunc)=>{
 	var dbo = parameters[1].db("travelexperts");
 	var query = { AgtEmail: `${ parameters[0] }`};
 
+
 // update view or database depending on callback function
 	dbo.collection("agents").find(query).toArray(function(err, result) {
 		if (err) throw err;
 
-		if (callbackFunc == dp.genConfirm)
+		if (callbackFunc == dp.genThanks)
 		{
 			parameters[0] = result;
 			parameters[1] = parameters[2];
-			parameters[2] = parameters[3];
 			callbackFunc.apply(null, parameters);
 		}
 		else 
