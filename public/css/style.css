@@ -25,7 +25,7 @@ body {
 }
 
 .navigation_logo {
-    height: 4.75rem;
+    height: 4.5rem;
     margin: .65rem 5rem;
     width: auto;
 }
@@ -97,7 +97,7 @@ body {
     letter-spacing: .1rem;
     line-height: 3.25rem;
     word-spacing: .15rem;
-	margin: 4rem auto 6rem auto;
+	margin: 4rem auto 4rem auto;
 }
 
 .hero_text{
