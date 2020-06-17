@@ -51,6 +51,22 @@ function take_id() {
 
 
 }
+
+function sendPicsData() {
+  const userConfirm = confirm('Do you wish to proceed');
+  if(userConfirm) {
+    const headshotPic = document.getElementById('headshot').src;
+    const idPic = document.getElementById('take_id').src
+    
+  } else {
+    return userConfirm
+  }
+
+  // const headshotPic = document.getElementById('headshot').innerHTML
+}
+
+
+
 /* https://www.npmjs.com/package/multer-gridfs-storage */
 
 /*  https://stackoverflow.com/questions/48722959/upload-image-to-mongodb-with-nodejs-and-express (Add mongoDB upload later )
