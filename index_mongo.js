@@ -3,12 +3,8 @@ const path = require("path");
 const app = express();
 const mongo = require("mongodb").MongoClient;
 const controler = require("./public/js/controler.js");
-<<<<<<< HEAD
-const dp = require("./views/DynPage.js");
 const bodyParser = require('body-parser')
-=======
 const dp = require("./views/thanks.js");
->>>>>>> 88d8f8d901a28d12a5496389764a4c4a79c3ff10
 
 // this package is for multipart form data(image data) from front end --> /examineeauth 
 const formidable = require('formidable'), util = require('util');
