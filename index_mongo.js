@@ -3,8 +3,12 @@ const path = require("path");
 const app = express();
 const mongo = require("mongodb").MongoClient;
 const controler = require("./public/js/controler.js");
+<<<<<<< HEAD
 const dp = require("./views/DynPage.js");
 const bodyParser = require('body-parser')
+=======
+const dp = require("./views/thanks.js");
+>>>>>>> 88d8f8d901a28d12a5496389764a4c4a79c3ff10
 
 // this package is for multipart form data(image data) from front end --> /examineeauth 
 const formidable = require('formidable'), util = require('util');
@@ -12,6 +16,8 @@ const formidable = require('formidable'), util = require('util');
 // connecting to mongo database
 const url = "mongodb://localhost:27017";
 var conn;
+var email;
+
 // try to connect
 mongo.connect(url, {
     useNewUrlParser: true,
@@ -90,11 +96,12 @@ app.post('/examineeauth', (req, res) => {
 
 })
 
-app.get("/confirm", (req, res)=>{
-	
-// reselect and confirm
-    controler.selDataMongo	([email, conn, lv_view, res], dp.genConfirm);
 
+app.get("/thanks", (req, res)=>{
+	
+// reselect examinee and generate thanks page 
+    controler.selDataMongo	([email, conn, res], dp.genThanks);
+	
 });
 
 // default error handler
