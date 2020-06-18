@@ -8,11 +8,12 @@ var reminders = ["Remember, cell phone use is not permitted during an exam",
 //Variable for the reminder interval
 var remindInter;
 
-//Index number used to get a reminder, randomly generated initially
-var i = Math.floor(Math.random() * reminders.length);
+//Index number used to get a reminder
+var i;
 
 //Starts the interval
 function timeReminder(){
+	switchReminder()
 	remindInter = setInterval(switchReminder, 5000);
 }
 
