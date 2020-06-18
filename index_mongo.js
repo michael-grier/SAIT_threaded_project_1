@@ -1,3 +1,9 @@
+// Author: Daechul Lee (picture related coding)/Robert Geipel (the remaining coding)
+// Date: 6/18/2020
+// OOSD APR16
+// Description: index file for node js-framework
+
+
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -60,8 +66,9 @@ app.get('/', (req, res) => {
 // routing post request and updating data base
 app.post('/register', (req, res, next)=>{	
 
-// update database
+// update database (email has is the unique identifier
 	email = req.body.Email;
+// calling the controller function and providing the view function as parameter along with a parameter list	
 	controler.selDataMongo([email, conn, req], controler.updateDataMongo);
 
 // redirect to confirmation 
@@ -95,7 +102,7 @@ app.post('/examineeauth', (req, res) => {
 
 app.get("/thanks", (req, res)=>{
 	
-// reselect examinee and generate thanks page 
+// reselect examinee and generate thanks page - we use the same controller function and parameter convention
     controler.selDataMongo	([email, conn, res], dp.genThanks);
 	
 });

@@ -1,3 +1,8 @@
+// Author: Daechul Lee (picture related coding)/Robert Geipel (remaining code)
+// Date: 6/18/2020
+// OOSD APR16
+// Description: controller package
+
 const dp = require("../../views/thanks.js");
 
 exports.updateDataSql = function update(result, conn, req) {
@@ -96,7 +101,7 @@ exports.selDataSql = (parameters, callbackFunc) => {
 
 exports.selDataMongo = (parameters, callbackFunc)=>{
 
-// run query to get record
+// run query to get record by email address
 	var dbo = parameters[1].db("travelexperts");
 	var query = { AgtEmail: `${ parameters[0] }`};
 
@@ -104,7 +109,7 @@ exports.selDataMongo = (parameters, callbackFunc)=>{
 // update view or database depending on callback function
 	dbo.collection("agents").find(query).toArray(function(err, result) {
 		if (err) throw err;
-
+// paramter mapping wouldn't necessary if we followed a convention when controller and view are called (not implemented)
 		if (callbackFunc == dp.genThanks)
 		{
 			parameters[0] = result;

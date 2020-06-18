@@ -1,3 +1,8 @@
+// Author: Chrystal Champion/Robert Geipel
+// Date: 6/18/2020
+// Class: OOSD APR16
+// Description: view package
+
 const fs = require("fs");
 
 
