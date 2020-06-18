@@ -68,7 +68,8 @@
 		color: Black;
 		text-align: left;
 		}
-		
+	
+/* SPECIAIL CASE: Main body text - theEnd.html */	
 	#questions {
 		text-transform: uppercase;
 		font-size: 48px;
@@ -77,7 +78,8 @@
 		Padding-left: 650px;
 		padding-top: 200px;
 		}
-		
+
+/* SPECIAIL CASE: Main body text - tfinal.html */		
 	#finalText {
 		font-size: 50px;
 		color: black;
@@ -86,12 +88,13 @@
 		padding-top: 50px;
 		}
 	
-/* Positioning for the Credits Menu - present.html*/	
+/* Positioning for the Credits Block - present.html*/	
+	
+	/*Values without units are ignored by the browser - line is a placeholder - example top: 0;*/
 	
 		.creditPos {
 			position: absolute;
 			width: 100%;
-			/*height: 90px;*/
 			top: 600px;
 			right: 0;
 			left: 0;
@@ -99,37 +102,32 @@
 			background-color: white;
 			}	 
 
-		
+/* Positioning for the Title Block - present.html*/		
 		#titleBlock {
 			position: relative;
 			width: 100%;
-			/*height: 150px;*/
-			/*Values without units are ignored by the browser - line is a placeholder*/
 			top: 0;
 			right: 0;
 			left: 0;  
 			background-color: white;
 			text-align: right;
 			/*z-index: -1;*/
-			/*float: right;*/
 			padding: 2px;
 			}
-			
-		#instructorBlock {
+
+/* Positioning for the Instructors/Client Block - present.html Positioning for the Teams Block - teamIntro.html*/			
+		#instructorBlock, #teamsBlock {
 			position: relative;
 			width: 100%;
-			/*height: 150px;*/
-			/*Values without units are ignored by the browser - line is a placeholder*/
-			/*top: 100px;*/
+			top: 0;
 			right: 0;
 			left: 0;  
 			background-color: none;
-			/*opacity: 0.5;*/
 			text-align: right;
 			/*z-index: -1;*/
-			/*float: right;*/
 			}
-			
+
+/* Positioning for the footer Block - all pages*/	
 		.footPos {
 			position: absolute;
 			width: 100%;
@@ -141,16 +139,12 @@
 			background-color: white;
 			}
 			
-/* Development team table - teamIntro.html */
-		#teamTable {
-			
-			}
 
-/*Link styles*/
+/*Link styles - all pages*/
 	a:link, a:visited {
 	  color: red;
 	  text-decoration: underline;
-	  cursor: url(pointer.cur),auto;
+	  cursor: url(pointer.cur),auto;  /*Micky Mouse Hand Pointer*/
 	  font-family: 'Source Code Pro', monospace;
 	  }
 
@@ -159,7 +153,7 @@
 	  font-family: 'Source Code Pro', monospace;
 	  }
 
-	/* Responsive - the screen <600px, stack columns*/
+/* Responsive - the screen <600px, stack columns*/
 		@media screen and (max-width: 600px) {
 		  .col-25, .col-75, input[type=submit], input[type=reset] {
 			width: 100%;
