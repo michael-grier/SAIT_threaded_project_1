@@ -1,0 +1,163 @@
+/* Design: Phase 1 - Presentation
+	Invigulus, Automated Proctoring Service
+	Threaded Project for OOSD Spring 2020
+	PROJ-207-OOS
+	--- Presentation: Styles
+	By: Richard Galambos, C.E.T.
+	Date of Project start: June 16, 2020
+	Last Modified: June 17, 2020
+	Version: 1.0
+		 
+/*Styling for text*/
+	.FontRoboto {
+		font-family: 'Roboto', sans-serif;
+		}
+				
+	.fontCourier {
+		font-family: 'Source Code Pro', monospace;
+		}
+
+	.titleSubheader {
+		/*text-transform: uppercase;*/
+		font-size: 36px;
+		color: #666666;
+		}
+	
+	.subTitle {
+		/*text-transform: uppercase;*/
+		font-size: 36px;
+		color: black;
+		}
+		
+	.title {
+		text-transform: uppercase;
+		font-size: 48px;
+		color: black;
+		}
+		
+	.creditName {
+		/*text-transform: uppercase;*/
+		font-size: 24px;
+		color: black;
+		}
+		
+	.creditHeader {
+		text-transform: uppercase;
+		font-size: 18px;
+		color: #666666;
+		}
+
+	.credit {
+		text-transform: uppercase;
+		font-size: 14px;
+		color: Black;
+		}	
+		
+	.tableHeader {
+		font-family: 'Source Code Pro', monospace;
+		font-size: 24px;
+		color: Black;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 120px;
+		}
+		
+	.tableText {
+		font-family: 'Source Code Pro', monospace;
+		font-size: 20px;
+		color: Black;
+		text-align: left;
+		}
+	
+/* SPECIAIL CASE: Main body text - theEnd.html */	
+	#questions {
+		text-transform: uppercase;
+		font-size: 48px;
+		color: black;
+		font-weight: bold;
+		Padding-left: 650px;
+		padding-top: 200px;
+		}
+
+/* SPECIAIL CASE: Main body text - tfinal.html */		
+	#finalText {
+		font-size: 50px;
+		color: black;
+		font-weight: bold;
+		Padding-left: 500px;
+		padding-top: 50px;
+		}
+	
+/* Positioning for the Credits Block - present.html*/	
+	
+	/*Values without units are ignored by the browser - line is a placeholder - example top: 0;*/
+	
+		.creditPos {
+			position: absolute;
+			width: 100%;
+			top: 600px;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			background-color: white;
+			}	 
+
+/* Positioning for the Title Block - present.html*/		
+		#titleBlock {
+			position: relative;
+			width: 100%;
+			top: 0;
+			right: 0;
+			left: 0;  
+			background-color: white;
+			text-align: right;
+			/*z-index: -1;*/
+			padding: 2px;
+			}
+
+/* Positioning for the Instructors/Client Block - present.html Positioning for the Teams Block - teamIntro.html*/			
+		#instructorBlock, #teamsBlock {
+			position: relative;
+			width: 100%;
+			top: 0;
+			right: 0;
+			left: 0;  
+			background-color: none;
+			text-align: right;
+			/*z-index: -1;*/
+			}
+
+/* Positioning for the footer Block - all pages*/	
+		.footPos {
+			position: absolute;
+			width: 100%;
+			/*height: 90px;*/
+			top: 750px;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			background-color: white;
+			}
+			
+
+/*Link styles - all pages*/
+	a:link, a:visited {
+	  color: red;
+	  text-decoration: underline;
+	  cursor: url(pointer.cur),auto;  /*Micky Mouse Hand Pointer*/
+	  font-family: 'Source Code Pro', monospace;
+	  }
+
+	a:link:active, a:visited:active {
+	  color: purple;
+	  font-family: 'Source Code Pro', monospace;
+	  }
+
+/* Responsive - the screen <600px, stack columns*/
+		@media screen and (max-width: 600px) {
+		  .col-25, .col-75, input[type=submit], input[type=reset] {
+			width: 100%;
+			margin-top: 0;
+		  }
+		}
+		
