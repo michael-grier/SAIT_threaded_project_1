@@ -149,7 +149,6 @@ exports.insertPic = (para, callbackFunc) => {
       userIDPic: `${userIDPic}`,
       userIDPicPath: `${userIDPicPath}`,
     };
-    console.log(agentInfo)
     dbo.collection("userPics").insertOne({agentInfo},function(err, res) {
       if (err) throw err;
 

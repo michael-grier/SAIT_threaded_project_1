@@ -81,11 +81,6 @@ app.post('/examineeauth', (req, res) => {
     const headShotPic = req.body.headShot;
     const userIDPic = req.body.userID;
 
-    console.log("test", headShotPic, userIDPic)
-    // console.log(userInfo)
-    // const headShotPath;
-    // controler.inserPic
-
     controler.insertPic([email, conn, headShotPic.path, headShotPic.date, userIDPic.path, userIDPic.date])
     return res.end("the data has been inserted")
   }
