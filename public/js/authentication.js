@@ -39,7 +39,7 @@ function take_id() {
         // 'code' will be the HTTP response code from the server, e.g. 200
         // 'text' will be the raw response content
 
-
+        
         let userPicData = JSON.parse(text.split('upload: ')[1].trim());
         userPicsData['userID'] = userPicData;
 
@@ -57,7 +57,6 @@ function sendPicsData(event) {
 
   if (userConfirm) {
     const userPics = JSON.stringify(userPicsData)
-    console.log('userPics:', userPics)
     const ajax = new XMLHttpRequest();
     ajax.open("POST", "/examineeauth");
     ajax.setRequestHeader("Content-Type", "application/json");
