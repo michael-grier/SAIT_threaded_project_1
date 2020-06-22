@@ -39,6 +39,7 @@
 .boxn {
   background-color: #fff;
   background-clip: padding-box;
+  overflow: hidden;
   }
 
 .cameraframe {
