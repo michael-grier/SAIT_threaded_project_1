@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+<!--Author Andries Joubert, Group 3
+References: Used Code from W3Schools examples and from previous web development assignment.
+w3schools.com/
+-->
+
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -73,14 +78,14 @@
 </head>
 <body>	
 <!--the form labels and fields-->
-    <nav class="navigation">
-        <img src="../public/img/logo.png" class="navigation_logo" alt="logo">
-        <ul class="navigation_links">
-            <li><a href="#">home</a></li>
-            <li><a href="#">about us</a></li>
-        </ul>
-    </nav>
-
+	<nav class="navigation">
+		<img src="../public/img/logo.png" class="navigation_logo" alt="logo">
+		<ul class="navigation_links">
+			<li><a href="#">home</a></li>
+			<li><a href="#">about us</a></li>
+		</ul>
+	</nav>
+	<fieldset>
 		<div>
 		
 			<h1>Examinee Registration</h1>
@@ -96,7 +101,7 @@
 				<label for="password">Examinee ID:</label>
 					<input type="text" id="examineeid" name="examineeid" required="required" /><br>
 				<input type="checkbox" name="termsconditions" 
-					value="termsconditions" id="termsconditions" checked="checked"/> I agree to the <a style="color:#3cB650" href='#'>terms and conditions</a> and <a style="color:#3cB650" href='#'>privacy policy.</a><br/>
+					value="termsconditions" id="termsconditions" checked="checked" required="required"/> I agree to the <a style="color:#3cB650" href='#'>terms and conditions</a> and <a style="color:#3cB650" href='#'>privacy policy.</a><br/>
 				<!--submit and reset buttons-->		
 				<input type="submit" value="Submit" onclick="return submitFunction()">
 			</form>
@@ -125,23 +130,23 @@
 			{
 			alert("The email field has an invalid entry");
 			}
-			}
-
+			} 
 
 		function submitFunction() {
 			var fnamevalidate = document.getElementById("fname");
 			var lnamevalidate = document.getElementById("lname");
 			var emailvalidate = document.getElementById("Email");
-			var usernamevalidate = document.getElementById("examid");
-			var passwordvalidate = document.getElementById("examineeid");
+			var examidvalidate = document.getElementById("examid");
+			var examineeidvalidate = document.getElementById("examineeid");
 			var termsvalidate = document.getElementById("termsconditions").checked;
+				
 
-			if (fnamevalidate.value == ""||lnamevalidate.value == ""||emailvalidate.value == ""||examid.value == ""||examineeid.value == ""||termsvalidate == false)
+			if (fnamevalidate.value == ""||lnamevalidate.value == ""||emailvalidate.value == ""||examidvalidate.value == ""||examineeidvalidate.value == ""||termsvalidate == false)
 				{
 					alert("A required field is missing");
 				}
 			else {
-					confirm("Are you sure you want to submit?");
+					return confirm("Are you sure you want to submit?");
 				}
 			}	
 	</script>
