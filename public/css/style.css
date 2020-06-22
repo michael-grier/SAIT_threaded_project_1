@@ -257,3 +257,22 @@ body {
 	75% { opacity: 1; left: 0em; }
 	100% { opacity: 0; left: 5em;}
 }
+
+/* THANKS PAGE */
+
+.thanks{
+    position: absolute;
+    left: 32%;
+    top: 40%;
+    text-align: center; 
+}
+
+.thanks_title{
+    margin: 0 auto 3rem auto;
+    font-size: 175%;
+    font-size: 350%;
+    letter-spacing: .125rem;
+    line-height: 2.25rem;
+    line-height: 3.25rem;
+    word-spacing: .2rem
+}

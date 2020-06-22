@@ -5,19 +5,28 @@ var reminders = ["Remember, cell phone use is not permitted during an exam",
 				"Stay hydrated by grabbing a glass of water",
 				"Make sure you're comfortable while taking your exam"];
 
-//Variable for the reminder interval	
+//Variable for the reminder interval
 var remindInter;
 
-//Index number used to get a reminder, randomly generated initially
-var i = Math.floor(Math.random() * reminders.length);
+//Index number used to get a reminder
+var i;
 
 //Starts the interval
-function addReminder(){
+function timeReminder(){
+	switchReminder()
 	remindInter = setInterval(switchReminder, 5000);
 }
 
 //Switch reminder to a random one
 function switchReminder(){
-	i = Math.floor(Math.random() * reminders.length);
+	var newIndex = Math.floor(Math.random() * reminders.length);
+
+	//Check if new random number is the same as the previous
+	//increment newIndex if it's the same
+	if (i == newIndex){
+		newIndex = (i + 1) % reminders.length;
+	}
+	
+	i = newIndex;
 	document.getElementsByClassName("reminder")[0].innerHTML = reminders[i];
 }
