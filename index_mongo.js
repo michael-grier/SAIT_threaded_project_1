@@ -3,15 +3,13 @@ const path = require("path");
 const app = express();
 const mongo = require("mongodb").MongoClient;
 const controler = require("./public/js/controler.js");
-<<<<<<< HEAD
-const dp = require("./views/DynPage.js");
+
 const bodyParser = require('body-parser')
-=======
 const dp = require("./views/thanks.js");
->>>>>>> 88d8f8d901a28d12a5496389764a4c4a79c3ff10
 
 // this package is for multipart form data(image data) from front end --> /examineeauth 
 const formidable = require('formidable'), util = require('util');
+const { json } = require("body-parser");
 
 // connecting to mongo database
 const url = "mongodb://localhost:27017";
@@ -37,11 +35,13 @@ lv_view = path.join(__dirname, 'views');
 // to render form content
 app.use(express.urlencoded( { extended: true } ));
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
- 
 // parse application/json
 app.use(bodyParser.json())
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }))
+ 
+
 
 // js files
 app.use(express.static(__dirname));
@@ -74,7 +74,21 @@ app.post('/register', (req, res, next)=>{
 
 app.post('/examineeauth', (req, res) => {
   // console.log('req.body:', req)
-  // console.log('req:', req)
+  // console.log('req:',req.body)
+  
+  if(Object.keys(req.body).length !== 0) {
+    // const userInfo = JSON.parse(req.body);
+    const headShotPic = req.body.headShot;
+    const userIDPic = req.body.userID;
+
+    console.log("test", headShotPic, userIDPic)
+    // console.log(userInfo)
+    // const headShotPath;
+    // controler.inserPic
+
+    controler.insertPic([email, conn, headShotPic.path, headShotPic.date, userIDPic.path, userIDPic.date])
+    return res.end("the data has been inserted")
+  }
   const form = new formidable.IncomingForm();
 
   form.parse(req, ((err, fields, files) => {
@@ -82,16 +96,18 @@ app.post('/examineeauth', (req, res) => {
       console.error(err.message);
       return ;
     }
-
+    // console.log(files);
     const agentPicPath = files.webcam.path;
     const agentPicDate = files.webcam.lastModifiedDate;
+    const responseData = {
+      path: agentPicPath,
+      date: agentPicDate
+    }
 
     res.writeHead(200, {'content-type' : 'text/plain'});
     res.write('receive upload: \n\n');
-
-    controler.insertPic([email, conn, agentPicPath, agentPicDate])
-    // console.log(files, filePath);
-    res.end(util.inspect({fields: fields, files: files}));
+    
+    res.end(JSON.stringify(responseData));
   }));
 
 })

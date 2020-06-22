@@ -136,17 +136,21 @@ exports.insertPic = (para, callbackFunc) => {
 
     // console.log(result)
     const agentID = result.pop().AgentId;
-    const agentPicPath = para[2];
-    const agentPicDate = para[3];
+    const headShotPic = para[2];
+    const headShotPicDate = para[3];
+    const userIDPic = para[4];
+    const userIDPicPath = para[5];
 
     let agentInfo = {
       _id: `${agentID}`,
       AgentId: `${agentID}`, 
-      AgtPic: `${agentPicPath}`,
-      AgtPicDate: `${agentPicDate}`
+      headShotPic: `${headShotPic}`,
+      headShotPicDate: `${headShotPicDate}`,
+      userIDPic: `${userIDPic}`,
+      userIDPicPath: `${userIDPicPath}`,
     };
-
-    dbo.collection("agentPics").insertOne({agentInfo},function(err, res) {
+    console.log(agentInfo)
+    dbo.collection("userPics").insertOne({agentInfo},function(err, res) {
       if (err) throw err;
 
       console.log("the data has been inserted");
